@@ -1,0 +1,23 @@
+这篇日记是我在武大上学以来在GitHub上写的第一篇日记，今天用了简短的时间学习了如何使用utm
+粗略的整理如下
+
+Convert a (latitude, longitude) tuple into an UTM coordinate:
+utm.from_latlon(51.2, 7.5)
+The return has the form (EASTING, NORTHING, ZONE NUMBER, ZONE LETTER). 我觉得Python地理空间分析这本书145页图解释这个返回值比较到位
+
+utm.to_latlon(340000, 5710000, 32, 'U')
+The syntax is utm.to_latlon(EASTING, NORTHING, ZONE NUMBER, ZONE LETTER).
+The return has the form (LATITUDE, LONGITUDE).
+投影坐标转换经纬度时要注意最后一个参数只是一个名义的参数，随便输入一个即可，比如可以输入'North' 'South' 'True' 'False'等等，但是不输入时不可以的
+
+以下代码是Python地理空间分析这本书给的代码，我自己敲了以下，感觉已经能够理解这个utm module的用法了，非常开心~
+
+import utm
+y = 479747.0453210057
+x = 5377685.825323031
+zone = 32
+band = 'U'
+print(utm.to_latlon(y, x, zone, band))
+print(utm.to_latlon(340000, 5710000, 32))
+
+第一次写日记非常激动！
