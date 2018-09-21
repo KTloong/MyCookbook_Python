@@ -1,0 +1,30 @@
+明天就是中秋假期了，今天突然想能不能在大家都要走了的情况下避开浮躁，躲进机房，研究一下怎么用Python绘制一张好看的地图
+想画世界但是觉得太局限，因此我想从国家画到省，选哪个国家呢？我第一个想到是美国！（最想去的国家）
+
+首先利用conda安装 basemap ：    conda install basemap
+然后新建一个script，import必要的组件
+
+from mpl_toolkits.basemap import Basemap as Basemap
+import numpy as np
+import matplotlib.pyplot as plt
+
+接着新建地图对象
+m = Basemap(llcrnrlon=-119,llcrnrlat=22,urcrnrlon=-64,urcrnrlat=49,
+        projection='lcc',lat_1=33,lat_2=45,lon_0=-95)
+
+有几个参数没看明白，后来查阅文档描述如下：
+lon_0	center of desired map domain (in degrees).
+lat_1	first standard parallel for lambert conformal, albers equal area and equidistant conic.
+      Latitude of one of the two points on the projection centerline for oblique mercator.
+      If lat_1 is not given, but lat_0 is, lat_1 is set to lat_0 for lambert conformal, 
+      albers equal area and equidistant conic.
+lat_2	second standard parallel for lambert conformal, albers equal area and equidistant conic. 
+      Latitude of one of the two points on the projection centerline for oblique mercator. 
+      If lat_2 is not given it is set to lat_1 for lambert conformal, albers equal area and equidistant conic.
+
+接着读取shp文件，第一个参数为shp file的路径，第二个为字段，第三个表示是否绘制边界
+shp_info = m.readshapefile("C:/Users/student.DESKTOP-V147B6V/Desktop/UScounties/UScounties",'NAME',drawbounds=True)
+
+plt.show()就可以显示效果了hhh~ 以后继续深入了解高级用法~
+
+祝大家中秋快乐啊~O(∩_∩)O哈哈~
