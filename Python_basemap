@@ -28,3 +28,18 @@ shp_info = m.readshapefile("C:/Users/student.DESKTOP-V147B6V/Desktop/UScounties/
 plt.show()就可以显示效果了hhh~ 以后继续深入了解高级用法~
 
 祝大家中秋快乐啊~O(∩_∩)O哈哈~
+
+
+import numpy as np
+import matplotlib.pyplot as plt
+from mpl_toolkits.basemap import Basemap as Basemap
+# from matplotlib.colors import rgb2hex
+# from matplotlib.patches import Polygon
+
+m = Basemap(llcrnrlon=-119,llcrnrlat=22,urcrnrlon=-64,urcrnrlat=49,
+        projection='lcc',lat_1=33,lat_2=45,lon_0=-95)
+shp_info = m.readshapefile("C:/Users/student.DESKTOP-V147B6V/Desktop/USA_adm/USA_adm1",'NAME_1',drawbounds=True)
+print(shp_info)
+
+# m.drawcoastlines()
+plt.show()
