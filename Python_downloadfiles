@@ -1,0 +1,29 @@
+今天复习了一下怎么下载文件~
+首先加载下载文件要用的包
+pip install wget
+
+然后进入正题，嘻嘻嘻
+
+import wget
+url = 'https://i1.wp.com/python3.codes/wp-content/uploads/2015/06/Python3-powered.png?fit=650%2C350'  
+wget.download(url, 'C:/Users/student.DESKTOP-V147B6V/Desktop') 
+
+这样一来就可以成功下载了，那么如果想批量下载该怎么办呢？
+我觉得可以使用把文件名存到一个list中
+https://unsplash.com/photos/_JOJvosimXw/download?force=true
+https://unsplash.com/photos/YRgPxwbvY0E/download?force=true
+观察以上两个图片网址可以发现不同之处在于后半部分，那么我只需要取前半部分，后半部分自定义便可以实现批量下载
+首先我创建一个txt文件把名字存到里面
+
+import wget
+dir_download = 'C:/Users/student.DESKTOP-V147B6V/Desktop' #download direction
+url_bass = 'https://unsplash.com/photos/'                 #base part of url
+f = open('C:/Users/student.DESKTOP-V147B6V/Desktop/1.txt', 'r')
+lines = [line.rstrip('\n') for line in f]                 #read lines from txt file to a list
+f.close()
+for line in lines:                                        #download multifile
+	wget.download(url_bass + line, dir_download)
+  
+哈哈哈哈，大功告成~
+最后安利一个wallpaper的网站哦https://unsplash.com/
+O(∩_∩)O
