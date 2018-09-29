@@ -39,3 +39,8 @@ mysite/wsgi.py: An entry-point for WSGI-compatible web servers to serve your pro
 
 网站需要创建数据库，如果使用默认设置则使用sqlite3数据库。执行的命令如下：
 python manage.py migrate
+
+接着创建一个博客模型（Django中的模型是数据库中的一种特殊对象）
+python manage.py startapp blog
+添加之后需要在setting文件中补充blog这一项
+
