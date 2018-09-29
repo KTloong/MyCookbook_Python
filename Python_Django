@@ -35,3 +35,7 @@ mysite/settings.py: Settings/configuration for this Django project. Django setti
 mysite/urls.py: The URL declarations for this Django project; a “table of contents” of your Django-powered site. You can read more about URLs in URL dispatcher.
 mysite/wsgi.py: An entry-point for WSGI-compatible web servers to serve your project. See How to deploy with WSGI for more details.
 
+运行命令python manage.py runserver,随后在浏览器中输入localhost: 8000 或者 http://127.0.0.1:8000就可以看到自己创建的网站了 hhh
+
+网站需要创建数据库，如果使用默认设置则使用sqlite3数据库。执行的命令如下：
+python manage.py migrate
