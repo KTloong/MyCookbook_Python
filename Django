@@ -1,0 +1,14 @@
+Django学习第一天
+
+前几天在网上下载了一本叫《跟老齐学Python：Django》开发这本书。虽然我是学遥感的，但是对于找工作来说程序员是个良好的选择
+web开发是当下比较火的行业，Django框架对于用Python开发来说是很重要的，因此我想在课余时间对这个框架进行学习
+今天是第一天，我觉得状态很好
+Adrian Holovaty 和 Simon Willison这两个是是Django的创始人，首先我向他们致敬！
+
+首先通过命令： conda install django 安装Django
+接着查看安装的版本：
+import django
+print(django.get_version())
+显示我安装了2.1.1版本
+好了！如此一来，django安装成功，我继续向下学习！
+
