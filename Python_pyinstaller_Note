@@ -1,0 +1,19 @@
+1st add path c:\qt\qt_1489878162099\_b_env\Library\plugins
+
+2nd set deep with：
+import sys
+import os.path as osp
+sys.setrecursionlimit(9000)
+
+3rd picture files should be deploied in spec file at datas=[("MyPic.png","."),("WHU_LOGO_s.png",".")]， and all files should use relative directory！！！！
+and all the files should in the folder of main .py file
+
+4th all .py files should be located in folder where mean .py file in, and .py files should be add in Analysis list like:
+['GUI_Board.py',"CreateReport.py","GUI_Board_support.py","ReadTXT.py","ReportToTXT.py","Statistics.py"]
+'GUI_Board.py' is the main file of .py
+
+5th console=False
+
+6th  pyi-makespec -w xxx.py             this command generate the .spec file
+
+7th pyinstaller -d xxx.spec             this command generate the .exe file
