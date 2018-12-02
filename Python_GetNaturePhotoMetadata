@@ -1,0 +1,45 @@
+#Through this algorithm
+#I can get Name，Exposuretime，FNumber，ISO
+
+import os
+import exifread
+import tkinter.messagebox
+from tkinter.filedialog import askdirectory, asksaveasfilename
+import pandas as pd
+
+Basename = askdirectory(title="选择照片所在文件件")
+print(Basename)
+PhotoName_list = []
+PhotoName_list_raw = os.listdir(Basename)
+for name in PhotoName_list_raw:
+	if name.endswith(".JPG"):
+		PhotoName_list.append(name)
+del PhotoName_list_raw
+
+data = pd.DataFrame(columns=["Name","快门时间","光圈刻度","ISO大小"])
+
+for name in PhotoName_list:
+	f = open(os.path.join(Basename,name), 'rb')
+	# Return Exif tags
+	tags = exifread.process_file(f)
+	ExposureTime = ""
+	if str(tags["EXIF ExposureTime"]).find("/")!=-1:
+		ExposureTime_list = str(tags["EXIF ExposureTime"]).split("/")
+		if int(ExposureTime_list[1])/int(ExposureTime_list[0]) > 1:
+			ExposureTime = "1/" + str(int(int(ExposureTime_list[1])/int(ExposureTime_list[0])))
+	else:
+		ExposureTime = str(tags["EXIF ExposureTime"])
+
+	FNumber=""
+	if str(tags["EXIF FNumber"]).find("/")!=-1:
+		FNumber_list = str(tags["EXIF FNumber"]).split("/")
+		FNumber = "F" + str(float(FNumber_list[0])/float(FNumber_list[1]))
+	else:
+		FNumber = "F" + str(tags["EXIF FNumber"])
+	ISO = str(tags["EXIF ISOSpeedRatings"])
+	df_temp = pd.DataFrame([[name,ExposureTime,FNumber,ISO]], columns=["Name","快门时间","光圈刻度","ISO大小"])
+	data=data.append(df_temp)
+tkinter.messagebox.showinfo("提示","照片元数据读取完毕，请保存信息！")
+writer = pd.ExcelWriter(asksaveasfilename(title="保存",filetypes = (("Excel files","*.xlsx"),("all files","*.*"))))
+data.to_excel(writer,index=False,columns=["Name","快门时间(sec.)","光圈刻度","ISO大小"],header=["照片名称","快门时间","光圈刻度","ISO大小"])
+writer.save()
