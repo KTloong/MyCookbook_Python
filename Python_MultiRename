@@ -1,0 +1,18 @@
+import os
+import tkinter.messagebox
+from tkinter.filedialog import askdirectory, asksaveasfilename,askopenfilename
+import pandas as pd
+
+Basename = askdirectory(title="选择照片所在文件夹")  
+#获取该目录下所有文件，存入列表中
+Flist=os.listdir(Basename)
+#此处usecols需要指定，列名也需要指定
+data = pd.read_excel(askopenfilename(),usecols=[1])
+Namespace = data["快门时间(sec.)"].tolist()
+
+for idx,name in enumerate(Flist):
+    oldname=Basename+"/"+name
+    #此处拓展名需要指定
+    newname=Basename+"/"+Namespace[idx]+".JPG"
+    os.rename(oldname,newname)
+tkinter.messagebox.showinfo("提示","重命名OK！")
