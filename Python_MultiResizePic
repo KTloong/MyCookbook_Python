@@ -1,0 +1,31 @@
+import os
+import os.path
+from PIL import Image
+import tkinter.messagebox
+from tkinter.filedialog import askdirectory, asksaveasfilename,askopenfilename
+'''
+filein: 输入图片
+fileout: 输出图片
+width: 输出图片宽度
+height:输出图片高度
+type:输出图片类型（png, gif, jpeg...）
+'''
+def ResizeImage(filein, fileout, width, height, type):
+	img = Image.open(filein)
+	out = img.resize((width, height),Image.ANTIALIAS) #resize image with high-quality
+	out.save(fileout, type)
+
+if __name__ == "__main__":
+	Basename = askdirectory(title="选择照片所在文件件")  
+	#获取该目录下所有文件，存入列表中
+	Flist=os.listdir(Basename)
+
+	DestiDir = askdirectory(title="选择输出文件夹")
+
+	for idx,name in enumerate(Flist):
+		fin = Basename+"/"+name 
+		fout = DestiDir+"/"+name
+		w = 256
+		h = 205
+		type = 'png'#指定输出图像类型
+		ResizeImage(fin, fout, w, h, type)
