@@ -1,0 +1,13 @@
+import pandas as pd
+import numpy as np
+#利用pandas生成特定范围的时间日期序列
+rng = pd.date_range('1/1/2000', "12/31/2100").to_series(keep_tz=False, index=None, name="Time")
+print(rng)
+writer = pd.ExcelWriter("D:\\Desktop\\数据生成.xlsx")
+rng.to_excel(writer,index=False,startcol=0,startrow=0)
+#利用pandas和numpy生成随机数序列
+df = pd.DataFrame(np.random.randint(300,800,size=(36890,1)),columns=["Flux"])
+#利用gpandas生成相同元素的序列
+df["H"]="0:00:00"
+df.to_excel(writer,index=False,startcol=1,startrow=0)
+writer.save()
