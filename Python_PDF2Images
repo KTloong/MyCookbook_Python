@@ -1,0 +1,11 @@
+#利用wand把PDF转Image算法
+
+from wand.image import Image as wi
+
+pdf = wi(filename="FlashCards.pdf", resolution=300)
+pdfImage = pdf.convert("png")
+i = 1
+for img in pdfImage.sequence:
+	page = win(image=img)
+	page.save(filename=str(i)+".png")
+	i +=1
