@@ -15,9 +15,15 @@ google 搜索 git download，在官网下载git windows版本（64位）
 
 首先VCS-》Git-》pull 点击 pull 即可
 
+
 --------------------创建了new branch如何在Git Master中检测到呢？ 答案是需要按照如下操作进行！
 
 首先点击PyCharm中的Git Master查看是否有相应的Branch
 接着点击PyCharm下面的Terminal 输入命令 git fetch
 执行命令后便可以对Git Master中的Branch进行刷新了，然后点击新的Branch点击checkout输入Branch在本地的名字，接着就可以对新
 的Branch进行修改了！
+
+——————————pull和pull request是两个概念需要区分，pull是将Github上面的东西拉到本地，pull request（merge）
+是一个repo到另一个repo的合并过程。比如：把自己的new branch中的东西PR到masterbranch中。这个操作应该这么做：
+
+这个只需要在github中点击new pull request即可，一步一步来就能完成操作！不难O(∩_∩)O
