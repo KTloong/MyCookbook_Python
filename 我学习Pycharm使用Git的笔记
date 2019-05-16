@@ -10,3 +10,7 @@ google 搜索 git download，在官网下载git windows版本（64位）
 
 右键 git（提交文件） 右键commit file（对修改进行陈述） 添加commite信息 选择commite and push， 点击push
 
+————————以上内容是如何将Github上的东西同步到本地以及本地做了修改怎么同步到Github——————————
+那么如何将Github cloud end 被修改的东西拉到本地呢？这就需要一下操作！
+
+首先VCS-》Git-》pull 点击 pull 即可
