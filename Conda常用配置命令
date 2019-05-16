@@ -1,0 +1,26 @@
+对conda检查更新
+conda install conda
+对anaconda检查更新
+conda install anaconda
+
+查看conda安装的库
+conda list
+
+更新所有包
+conda update --all
+
+更新package
+conda update package-name
+
+删除package
+conda remove package-name
+
+
+
+换回默认的源
+conda config --remove-key channels
+
+添加清华大学下载源
+conda config --add channels 'https://mirrors.tuna.tsinghua.edu.cn/anaconda/pkgs/free/'
+conda config --set show_channel_urls yes
+
