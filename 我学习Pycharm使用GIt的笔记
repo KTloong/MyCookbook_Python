@@ -1,0 +1,12 @@
+首先确保电脑已经安装了anaconda和pycharm 安装好了python等等需要的东西
+
+google 搜索 git download，在官网下载git windows版本（64位）
+下载好后安装git
+
+安装好后打开pycharm，file-》setting version control-》git-》test test自动检测成功后点OK
+
+接着点击VCM，选择git
+登录GIthub账号，然后选择需要的repo的url，然后选择本地存放位置
+
+右键 git（提交文件） 右键commit file（对修改进行陈述） 添加commite信息 选择commite and push， 点击push
+
