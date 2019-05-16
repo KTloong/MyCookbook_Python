@@ -14,3 +14,10 @@ google 搜索 git download，在官网下载git windows版本（64位）
 那么如何将Github cloud end 被修改的东西拉到本地呢？这就需要一下操作！
 
 首先VCS-》Git-》pull 点击 pull 即可
+
+--------------------创建了new branch如何在Git Master中检测到呢？ 答案是需要按照如下操作进行！
+
+首先点击PyCharm中的Git Master查看是否有相应的Branch
+接着点击PyCharm下面的Terminal 输入命令 git fetch
+执行命令后便可以对Git Master中的Branch进行刷新了，然后点击新的Branch点击checkout输入Branch在本地的名字，接着就可以对新
+的Branch进行修改了！
