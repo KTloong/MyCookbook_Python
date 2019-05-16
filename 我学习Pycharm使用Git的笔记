@@ -27,3 +27,4 @@ google 搜索 git download，在官网下载git windows版本（64位）
 是一个repo到另一个repo的合并过程。比如：把自己的new branch中的东西PR到masterbranch中。这个操作应该这么做：
 
 这个只需要在github中点击new pull request即可，一步一步来就能完成操作！不难O(∩_∩)O
+https://youtu.be/MBdLOl5tUKY 这个视频简明地讲了pull和PR的区别以及使用方法，值得学习！收获很大！
