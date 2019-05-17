@@ -20,7 +20,5 @@ conda remove package-name
 换回默认的源
 conda config --remove-key channels
 
-添加清华大学下载源
-conda config --add channels 'https://mirrors.tuna.tsinghua.edu.cn/anaconda/pkgs/free/'
-conda config --set show_channel_urls yes
+
 
