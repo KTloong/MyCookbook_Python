@@ -38,3 +38,5 @@ plt.show()
 df.plot(kind="scatter", x="close", y="pre_close", rot=0)#绘制散点图
 plt.show()
 
+#2019年5月27日
+#参考资料https://mp.weixin.qq.com/s?__biz=MzIxNjM4NDE2MA==&mid=2247490270&idx=2&sn=3ca321fd0ced7d458f4c10233004ddd5&chksm=97888d11a0ff0407e6151aea5e79fb669e04a04bc83c777aa407bc5b266dc6ea82522b93d866&mpshare=1&scene=1&srcid=&key=864f666bf054558473cfb972449b00e1c9d5500194a086a46c7f5a19fa9d7f0ff6eded56c49c1e17003bbc8bc31e80568989e24c54ba47805879f0c4a039fc2d64722ae913f77cbf2d5e0772b58352dd&ascene=1&uin=MjIzODM3NTE0Mw%3D%3D&devicetype=Windows+10&version=62060833&lang=en&pass_ticket=vQVADnlTAFrKs6uvdc0%2Bsx7oKcLgzsM8yloCgW23r5vSVb4hkISf8iXZ%2BxeJmznG
