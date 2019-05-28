@@ -1,10 +1,12 @@
 import geopandas as gpd
 import pandas as pd
 import os
+from tkinter import filedialog
+
 pd.set_option("display.precision", 11)
 
-MyFolder = r"D:\Desktop\NNFN\DBF"
-
+MyFolder = filedialog.askdirectory()
+print(MyFolder)
 MyDBFFileName_List = [pa for pa in os.listdir(MyFolder) if os.path.splitext(os.path.basename(pa))[1] == ".dbf"]
 # print(MyDBFFileName_List)
 MyDBFFullFileName = []
