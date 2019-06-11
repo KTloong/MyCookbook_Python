@@ -22,7 +22,7 @@ def KLReadGeotiff(inpath):
      xy = [col, row]
      return data,band,proj,xy,GeoTran #return pixels, band numbers and projection information
 
-inputPath = r"D:\Desktop\00"
+inputPath = r"D:\Desktop\20"
 bandList = [inputPath + "\\" + band for band in os.listdir(inputPath)]
 bandList.sort(reverse=False)
 print(bandList)
