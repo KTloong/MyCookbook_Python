@@ -19,7 +19,7 @@ def haversine(lon1, lat1, lon2, lat2):  # 经度1，纬度1，经度2，纬度2 
     return c * r * 1000
 
 angle = []
-data = pd.read_excel(r"D:\Desktop\第三组数据.xlsx", usecols=range(2, 5))
+data = pd.read_excel(r"D:\Desktop\工作簿1.xlsx", usecols=range(2, 5))
 length = len(data['经度'])
 print(data.keys())
 for item in range(1, length):
@@ -27,4 +27,4 @@ for item in range(1, length):
     angle.append(an)
 # print(atan(haversine(114.3497607,30.53591186,114.349895,30.535933)/312.34)/pi*180)
 # print(atan(haversine(114.3497607,30.53591186,114.3506233,30.53601247)/312.316)/pi*180)
-np.savetxt(r"D:\Desktop\第三组数据_1.csv", angle, fmt='%s', delimiter=' ')
+np.savetxt(r"D:\Desktop\工作簿1_1.csv", angle, fmt='%s', delimiter=' ')
